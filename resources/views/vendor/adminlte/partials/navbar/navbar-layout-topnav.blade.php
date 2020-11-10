@@ -22,7 +22,7 @@
             {{-- Navbar left links --}}
             <ul class="nav navbar-nav">
                 {{-- Configured left links --}}
-                @each('adminlte::partials.navbar.menu-item', $adminlte->menu('navbar-left'), 'item')
+                @each('adminlte::partials.navbar.menu-item-type', $adminlte->menu('navbar-left'), 'item-type')
 
                 {{-- Custom left links --}}
                 @yield('content_top_nav_left')
@@ -35,20 +35,20 @@
             @yield('content_top_nav_right')
 
             {{-- Configured right links --}}
-            @each('adminlte::partials.navbar.menu-item', $adminlte->menu('navbar-right'), 'item')
+            @each('adminlte::partials.navbar.menu-item-type', $adminlte->menu('navbar-right'), 'item-type')
 
             {{-- User menu link --}}
             @if(Auth::user())
                 @if(config('adminlte.usermenu_enabled'))
-                    @include('adminlte::partials.navbar.menu-item-dropdown-user-menu')
+                    @include('adminlte::partials.navbar.menu-item-type-dropdown-user-menu')
                 @else
-                    @include('adminlte::partials.navbar.menu-item-logout-link')
+                    @include('adminlte::partials.navbar.menu-item-type-logout-link')
                 @endif
             @endif
 
             {{-- Right sidebar toggler link --}}
             @if(config('adminlte.right_sidebar'))
-                @include('adminlte::partials.navbar.menu-item-right-sidebar-toggler')
+                @include('adminlte::partials.navbar.menu-item-type-right-sidebar-toggler')
             @endif
         </ul>
 

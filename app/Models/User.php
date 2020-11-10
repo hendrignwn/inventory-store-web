@@ -11,6 +11,9 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    const ROLE_ADMIN = 1;
+    const ROLE_EMPLOYEE = 2;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -19,6 +22,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role',
         'password',
     ];
 
@@ -40,4 +44,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function roleLabels() {
+        return [
+            self::ROLE_ADMIN => 'Admin',
+            self::ROLE_EMPLOYEE => 'Karyawan',
+        ];
+    }
 }

@@ -680,19 +680,19 @@
     CAROUSEL: 'carousel',
     ACTIVE: 'active',
     SLIDE: 'slide',
-    RIGHT: 'carousel-item-right',
-    LEFT: 'carousel-item-left',
-    NEXT: 'carousel-item-next',
-    PREV: 'carousel-item-prev',
-    ITEM: 'carousel-item',
+    RIGHT: 'carousel-item-type-right',
+    LEFT: 'carousel-item-type-left',
+    NEXT: 'carousel-item-type-next',
+    PREV: 'carousel-item-type-prev',
+    ITEM: 'carousel-item-type',
     POINTER_EVENT: 'pointer-event'
   };
   var Selector$2 = {
     ACTIVE: '.active',
-    ACTIVE_ITEM: '.active.carousel-item',
-    ITEM: '.carousel-item',
-    ITEM_IMG: '.carousel-item img',
-    NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
+    ACTIVE_ITEM: '.active.carousel-item-type',
+    ITEM: '.carousel-item-type',
+    ITEM_IMG: '.carousel-item-type img',
+    NEXT_PREV: '.carousel-item-type-next, .carousel-item-type-prev',
     INDICATORS: '.carousel-indicators',
     DATA_SLIDE: '[data-slide], [data-slide-to]',
     DATA_RIDE: '[data-ride="carousel"]'
@@ -1627,7 +1627,7 @@
     FORM_CHILD: '.dropdown form',
     MENU: '.dropdown-menu',
     NAVBAR_NAV: '.navbar-nav',
-    VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
+    VISIBLE_ITEMS: '.dropdown-menu .dropdown-item-type:not(.disabled):not(:disabled)'
   };
   var AttachmentMap = {
     TOP: 'top-start',
@@ -3770,7 +3770,7 @@
     LOAD_DATA_API: "load" + EVENT_KEY$8 + DATA_API_KEY$6
   };
   var ClassName$8 = {
-    DROPDOWN_ITEM: 'dropdown-item',
+    DROPDOWN_ITEM: 'dropdown-item-type',
     DROPDOWN_MENU: 'dropdown-menu',
     ACTIVE: 'active'
   };
@@ -3779,10 +3779,10 @@
     ACTIVE: '.active',
     NAV_LIST_GROUP: '.nav, .list-group',
     NAV_LINKS: '.nav-link',
-    NAV_ITEMS: '.nav-item',
-    LIST_ITEMS: '.list-group-item',
+    NAV_ITEMS: '.nav-item-type',
+    LIST_ITEMS: '.list-group-item-type',
     DROPDOWN: '.dropdown',
-    DROPDOWN_ITEMS: '.dropdown-item',
+    DROPDOWN_ITEMS: '.dropdown-item-type',
     DROPDOWN_TOGGLE: '.dropdown-toggle'
   };
   var OffsetMethod = {
@@ -3963,7 +3963,7 @@
         $link.addClass(ClassName$8.ACTIVE); // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item-type
 
         $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_ITEMS).children(Selector$8.NAV_LINKS).addClass(ClassName$8.ACTIVE);
       }

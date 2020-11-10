@@ -49,6 +49,26 @@
             @endif
         </div>
 
+        {{-- Role field --}}
+        <div class="input-group mb-3">
+            <select name="role" class="form-control {{ $errors->has('role') ? 'is-invalid' : '' }}" placeholder="Hak Akses">
+                <option value="">Pilih Hak Akses</option>
+                @foreach (\App\Models\User::roleLabels() as $key => $value)
+                <option value="{{$key}}" {{ old('role') == $key ? 'selected' : '' }}>{!! $value !!}</option>
+                @endforeach
+            </select>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                </div>
+            </div>
+            @if($errors->has('role'))
+                <div class="invalid-feedback">
+                    <strong>{{ $errors->first('role') }}</strong>
+                </div>
+            @endif
+        </div>
+
         {{-- Password field --}}
         <div class="input-group mb-3">
             <input type="password" name="password"

@@ -33,7 +33,7 @@
             {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}
         </div>
 
-        {{-- Lockscreen item --}}
+        {{-- Lockscreen item-type --}}
         <div class="lockscreen-item">
             @if(config('adminlte.usermenu_image'))
                 <div class="lockscreen-image">

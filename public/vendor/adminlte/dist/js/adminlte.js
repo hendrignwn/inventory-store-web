@@ -764,14 +764,14 @@
       LOAD_DATA_API: "load" + EVENT_KEY
     };
     var Selector = {
-      LI: '.nav-item',
+      LI: '.nav-item-type',
       LINK: '.nav-link',
       TREEVIEW_MENU: '.nav-treeview',
       OPEN: '.menu-open',
       DATA_WIDGET: '[data-widget="treeview"]'
     };
     var ClassName = {
-      LI: 'nav-item',
+      LI: 'nav-item-type',
       LINK: 'nav-link',
       TREEVIEW_MENU: 'nav-treeview',
       OPEN: 'menu-open',
@@ -1580,7 +1580,7 @@
           this._element.parents('.dropdown-menu').first().find('.show').removeClass("show").hide();
         }
 
-        this._element.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+        this._element.parents('li.nav-item-type.dropdown.show').on('hidden.bs.dropdown', function (e) {
           $('.dropdown-submenu .show').removeClass("show").hide();
         });
       };
