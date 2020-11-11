@@ -15,6 +15,7 @@ class Item extends BaseModel
     protected $fillable = [
         'name',
         'sell_price',
+        'minimum_stock',
         'purchase_price',
         'description',
         'item_type_id',
@@ -22,7 +23,11 @@ class Item extends BaseModel
     ];
 
     public function itemType() {
-        return $this->hasOne(ItemType::class);
+        return $this->belongsTo(ItemType::class);
+    }
+
+    public function itemStocks() {
+        return $this->hasMany(ItemStock::class);
     }
 
     public static function statusLabels()

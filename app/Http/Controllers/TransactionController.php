@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Helpers\FormatConverter;
 use App\Models\Item;
 use App\Models\ItemStock;
-use App\Models\Order;
-use App\Models\OrderDetail;
+use App\Models\Transaction;
+use App\Models\TransactionDetail;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Datatables;
 use Yajra\DataTables\Html\Builder;
 
-class OrderController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Datatables Html Builder
@@ -25,12 +26,12 @@ class OrderController extends Controller
 
     public function index(Request $request) {
         if ($request->ajax()) {
-            $data = Order::select(['*']);
+            $data = Transaction::select(['*'])->with(['user', 'customer']);
             $datatables = DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $detail = route('order.show', ['order' => $row->id ]);
-                    $print = route('order.print', ['order' => $row->id ]);
+                    $detail = route('transaction.show', ['transaction' => $row->id ]);
+                    $print = route('transaction.print', ['transaction' => $row->id ]);
                     $btn = "<div class='d-flex'>
                                 <a href='{$detail}' class='btn btn-sm btn-primary'>
                                     <i class='far fa-eye icon-nm'></i>
@@ -48,12 +49,15 @@ class OrderController extends Controller
                 ->editColumn('updated_at', function($row) {
                     return Carbon::parse($row->updated_at)->toDateTimeString();
                 })
-                ->editColumn('order_date', function($row) {
-                    return Carbon::parse($row->order_date)->toDateString();
-                })
                 ->editColumn('grand_total', function($row) {
                     return FormatConverter::rupiahFormat($row->grand_total);
                 })
+//                ->editColumn('user', function($row) {
+//                    return $row->user ? $row->user->name : '-';
+//                })
+//                ->editColumn('customer', function($row) {
+//                    return $row->customer ? $row->customer->name : '-';
+//                })
                 ->rawColumns(['action']);
             return $datatables->make(true);
         }
@@ -67,13 +71,15 @@ class OrderController extends Controller
                 'buttons' => ['pdf'],
             ])
             ->addColumn(['data' => 'DT_RowIndex', 'name' => 'DT_RowIndex', 'title' => '#', 'orderable' => false, 'searchable' => false, 'width' => 30])
-            ->addColumn(['data' => 'order_number', 'name' => 'order_number', 'title' => 'Nomor Order'])
-            ->addColumn(['data' => 'order_date', 'name' => 'order_date', 'title' => 'Tanggal'])
+            ->addColumn(['data' => 'trx_number', 'name' => 'trx_number', 'title' => 'Nomor Transaksi'])
+            ->addColumn(['data' => 'created_at', 'name' => 'created_at', 'title' => 'Tanggal'])
+            ->addColumn(['data' => 'customer.name', 'name' => 'customer.name', 'title' => 'Customer'])
             ->addColumn(['data' => 'grand_total', 'name' => 'grand_total', 'title' => 'Grand Total'])
             ->addColumn(['data' => 'created_at', 'name' => 'created_at', 'title' => 'Created At'])
             ->addColumn(['data' => 'updated_at', 'name' => 'updated_at', 'title' => 'Updated At'])
+            ->addColumn(['data' => 'user.name', 'name' => 'user.name', 'title' => 'User'])
             ->addColumn(['data' => 'action', 'name' => 'action', 'title' => 'Aksi', 'orderable' => false, 'searchable' => false, 'width' => 100]);
-        return view('order.index', compact('dataTable'));
+        return view('transaction.index', compact('dataTable'));
     }
 
     /**
@@ -84,7 +90,7 @@ class OrderController extends Controller
     public function create()
     {
         $items = Item::where('status', Item::STATUS_ACTIVE)->select('id', 'name')->get();
-        return view('order.create', compact('items'));
+        return view('transaction.create', compact('items'));
     }
 
     /**
@@ -96,31 +102,39 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'supplier_id' => ['required'],
-            'order_number' => ['required'],
-            'total' => ['required'],
+            'customer_id' => ['required'],
+            'trx_number' => ['required'],
+            'grand_total' => ['required'],
         ]);
-        $model = new Order($request->all());
+        $model = new Transaction($request->all());
+        $model->user_id = Auth::user()->id;
         $model->save();
         foreach ($request->item as $key => $item) {
-            $modelDetail = new OrderDetail();
-            $modelDetail->order_id = $model->id;
+            $modelDetail = new TransactionDetail();
+            $modelDetail->transaction_id = $model->id;
             $modelDetail->item_id = $item;
             $modelDetail->qty = $request->qty[$key];
-            $modelDetail->price = $request->purchase_total[$key];
-            $modelDetail->purchase_total = $request->total[$key];
+            $modelDetail->price = $request->price[$key];
+            $modelDetail->total_price = $request->total_price[$key];
             $modelDetail->save();
 
-            $stock = ItemStock::where('supplier_id', $model->supplier_id)->where('item_id', $modelDetail->item_id)->first();
-            if (!$stock) {
-                $stock = new ItemStock();
+            $stocks = ItemStock::where('item_id', $modelDetail->item_id)->where('stock', '>', 0)->get();
+            $diffStock = $modelDetail->qty;
+            foreach($stocks as $stock) {
+                $tempStock = $stock->stock;
+                if ($diffStock <= 0) continue;
+                if ($stock->stock >= $diffStock) {
+                    $tempStock = (int)$stock->stock - (int)$diffStock;
+                    $diffStock = 0;
+                } else {
+                    $diffStock = (int)$diffStock - (int)$tempStock;
+                    $tempStock = 0;
+                }
+                $stock->stock = (int)$tempStock;
+                $stock->save();
             }
-            $stock->item_id = $modelDetail->item_id;
-            $stock->supplier_id = $model->supplier_id;
-            $stock->stock += $modelDetail->qty;
-            $stock->save();
         }
-        return redirect()->route('order.index')->with('success', 'Sukses!');
+        return redirect()->route('transaction.index')->with('success', 'Sukses!');
     }
 
     /**
@@ -131,8 +145,8 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $model = Order::find($id);
-        return view('order.show', compact('model'));
+        $model = Transaction::find($id);
+        return view('transaction.show', compact('model'));
     }
 
     /**
@@ -143,7 +157,18 @@ class OrderController extends Controller
      */
     public function print($id)
     {
-        $model = Order::find($id);
-        return view('order.print', compact('model'));
+        $model = Transaction::find($id);
+        return view('transaction.print', compact('model'));
+    }
+
+    public function ajaxGetItem($id) {
+        $model = Item::find($id);
+        if (!$model) {
+            return response()->json(['success' => false, data => null]);
+        }
+        $stock = ItemStock::where('item_id', $id)->groupBy('item_id')->sum('stock');
+        $model = $model->toArray();
+        $model['stock'] = $stock;
+        return response()->json(['success' => true, 'data' => $model]);
     }
 }

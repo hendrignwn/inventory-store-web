@@ -6,6 +6,9 @@ use Carbon\Carbon;
 
 class Transaction extends BaseModel
 {
+    const STATUS_PAID = 1;
+    const STATUS_YET_PAID = 0;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -25,11 +28,11 @@ class Transaction extends BaseModel
     }
 
     public function user() {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function customer() {
-        return $this->hasOne(Customer::class);
+        return $this->belongsTo(Customer::class);
     }
 
     public static function generateTrxNumber() {
@@ -53,5 +56,17 @@ class Transaction extends BaseModel
         $number = str_pad($increment, $padLength, '0', STR_PAD_LEFT);
 
         return $left . $number;
+    }
+
+    public static function statusLabels()
+    {
+        return [
+            self::STATUS_PAID => 'Lunas',
+            self::STATUS_YET_PAID => 'Belum Lunas',
+        ];
+    }
+
+    public function getStatusLabel() {
+        return self::statusLabels()[$this->status] ? self::statusLabels()[$this->status] : '-';
     }
 }

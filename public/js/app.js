@@ -1756,16 +1756,16 @@ function isStandardBrowserEnv() {
 }
 
 /**
- * Iterate over an Array or an Object invoking a function for each item-type.
+ * Iterate over an Array or an Object invoking a function for each item.
  *
  * If `obj` is an Array callback will be called passing
- * the value, index, and complete array for each item-type.
+ * the value, index, and complete array for each item.
  *
  * If 'obj' is an Object callback will be called passing
  * the value, key, and complete object for each property.
  *
  * @param {Object|Array} obj The object to iterate
- * @param {Function} fn The callback to invoke for each item-type
+ * @param {Function} fn The callback to invoke for each item
  */
 function forEach(obj, fn) {
   // Don't bother if no value provided
@@ -1903,6 +1903,39 @@ module.exports = {
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/OrderItem.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/OrderItem.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2578,16 +2611,16 @@ __webpack_require__.r(__webpack_exports__);
   var CLASS_NAME_CAROUSEL = 'carousel';
   var CLASS_NAME_ACTIVE$1 = 'active';
   var CLASS_NAME_SLIDE = 'slide';
-  var CLASS_NAME_RIGHT = 'carousel-item-type-right';
-  var CLASS_NAME_LEFT = 'carousel-item-type-left';
-  var CLASS_NAME_NEXT = 'carousel-item-type-next';
-  var CLASS_NAME_PREV = 'carousel-item-type-prev';
+  var CLASS_NAME_RIGHT = 'carousel-item-right';
+  var CLASS_NAME_LEFT = 'carousel-item-left';
+  var CLASS_NAME_NEXT = 'carousel-item-next';
+  var CLASS_NAME_PREV = 'carousel-item-prev';
   var CLASS_NAME_POINTER_EVENT = 'pointer-event';
   var SELECTOR_ACTIVE$1 = '.active';
-  var SELECTOR_ACTIVE_ITEM = '.active.carousel-item-type';
-  var SELECTOR_ITEM = '.carousel-item-type';
-  var SELECTOR_ITEM_IMG = '.carousel-item-type img';
-  var SELECTOR_NEXT_PREV = '.carousel-item-type-next, .carousel-item-type-prev';
+  var SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
+  var SELECTOR_ITEM = '.carousel-item';
+  var SELECTOR_ITEM_IMG = '.carousel-item img';
+  var SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
   var SELECTOR_INDICATORS = '.carousel-indicators';
   var SELECTOR_DATA_SLIDE = '[data-slide], [data-slide-to]';
   var SELECTOR_DATA_RIDE = '[data-ride="carousel"]';
@@ -3504,7 +3537,7 @@ __webpack_require__.r(__webpack_exports__);
   var SELECTOR_FORM_CHILD = '.dropdown form';
   var SELECTOR_MENU = '.dropdown-menu';
   var SELECTOR_NAVBAR_NAV = '.navbar-nav';
-  var SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item-type:not(.disabled):not(:disabled)';
+  var SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
   var PLACEMENT_TOP = 'top-start';
   var PLACEMENT_TOPEND = 'top-end';
   var PLACEMENT_BOTTOM = 'bottom-start';
@@ -5628,15 +5661,15 @@ __webpack_require__.r(__webpack_exports__);
   var EVENT_ACTIVATE = "activate" + EVENT_KEY$8;
   var EVENT_SCROLL = "scroll" + EVENT_KEY$8;
   var EVENT_LOAD_DATA_API$2 = "load" + EVENT_KEY$8 + DATA_API_KEY$6;
-  var CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item-type';
+  var CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
   var CLASS_NAME_ACTIVE$2 = 'active';
   var SELECTOR_DATA_SPY = '[data-spy="scroll"]';
   var SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
   var SELECTOR_NAV_LINKS = '.nav-link';
-  var SELECTOR_NAV_ITEMS = '.nav-item-type';
-  var SELECTOR_LIST_ITEMS = '.list-group-item-type';
+  var SELECTOR_NAV_ITEMS = '.nav-item';
+  var SELECTOR_LIST_ITEMS = '.list-group-item';
   var SELECTOR_DROPDOWN = '.dropdown';
-  var SELECTOR_DROPDOWN_ITEMS = '.dropdown-item-type';
+  var SELECTOR_DROPDOWN_ITEMS = '.dropdown-item';
   var SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
   var METHOD_OFFSET = 'offset';
   var METHOD_POSITION = 'position';
@@ -5810,7 +5843,7 @@ __webpack_require__.r(__webpack_exports__);
         $link.addClass(CLASS_NAME_ACTIVE$2); // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
 
-        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS).addClass(CLASS_NAME_ACTIVE$2); // Handle special case when .nav-link is inside .nav-item-type
+        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS).addClass(CLASS_NAME_ACTIVE$2); // Handle special case when .nav-link is inside .nav-item
 
         $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_ITEMS).children(SELECTOR_NAV_LINKS).addClass(CLASS_NAME_ACTIVE$2);
       }
@@ -12451,7 +12484,7 @@ function domManip( collection, args, callback, ignored ) {
 			scripts = jQuery.map( getAll( fragment, "script" ), disableScript );
 			hasScripts = scripts.length;
 
-			// Use the original fragment for the last item-type
+			// Use the original fragment for the last item
 			// instead of the first because it can end up
 			// being emptied incorrectly in certain situations (#8070).
 			for ( ; i < l; i++ ) {
@@ -15256,11 +15289,11 @@ function buildParams( prefix, obj, traditional, add ) {
 
 	if ( Array.isArray( obj ) ) {
 
-		// Serialize array item-type.
+		// Serialize array item.
 		jQuery.each( obj, function( i, v ) {
 			if ( traditional || rbracket.test( prefix ) ) {
 
-				// Treat each array item-type as a scalar.
+				// Treat each array item as a scalar.
 				add( prefix, v );
 
 			} else {
@@ -15277,14 +15310,14 @@ function buildParams( prefix, obj, traditional, add ) {
 
 	} else if ( !traditional && toType( obj ) === "object" ) {
 
-		// Serialize object item-type.
+		// Serialize object item.
 		for ( name in obj ) {
 			buildParams( prefix + "[" + name + "]", obj[ name ], traditional, add );
 		}
 
 	} else {
 
-		// Serialize scalar item-type.
+		// Serialize scalar item.
 		add( prefix, obj );
 	}
 }
@@ -34703,10 +34736,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 },
 
                 /**
-                 * Checks whether a item-type is in the given array and returns its index.
-                 * @param item The item-type of which the position in the array shall be determined.
+                 * Checks whether a item is in the given array and returns its index.
+                 * @param item The item of which the position in the array shall be determined.
                  * @param arr The array.
-                 * @returns {number} The zero based index of the item-type or -1 if the item-type isn't in the array.
+                 * @returns {number} The zero based index of the item or -1 if the item isn't in the array.
                  */
                 inA: function (item, arr) {
                     for (var i = 0; i < arr[LEXICON.l]; i++)
@@ -34918,33 +34951,33 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
             /*
              *
              * TERMS OF USE - EASING EQUATIONS
-             *
-             * Open source under the BSD License.
-             *
+             * 
+             * Open source under the BSD License. 
+             * 
              * Copyright Â© 2001 Robert Penner
              * All rights reserved.
-             *
-             * Redistribution and use in source and binary forms, with or without modification,
+             * 
+             * Redistribution and use in source and binary forms, with or without modification, 
              * are permitted provided that the following conditions are met:
-             *
-             * Redistributions of source code must retain the above copyright notice, this list of
+             * 
+             * Redistributions of source code must retain the above copyright notice, this list of 
              * conditions and the following disclaimer.
-             * Redistributions in binary form must reproduce the above copyright notice, this list
-             * of conditions and the following disclaimer in the documentation and/or other materials
+             * Redistributions in binary form must reproduce the above copyright notice, this list 
+             * of conditions and the following disclaimer in the documentation and/or other materials 
              * provided with the distribution.
-             *
-             * Neither the name of the author nor the names of contributors may be used to endorse
+             * 
+             * Neither the name of the author nor the names of contributors may be used to endorse 
              * or promote products derived from this software without specific prior written permission.
-             *
-             * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+             * 
+             * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
              * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
              * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
              *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
              *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-             *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+             *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
              * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-             *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
-             * OF THE POSSIBILITY OF SUCH DAMAGE.
+             *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+             * OF THE POSSIBILITY OF SUCH DAMAGE. 
              *
              */
         })();
@@ -36508,7 +36541,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var _viewportSize = {};
                 var _nativeScrollbarMinSize = {};
 
-                //naming:
+                //naming:	
                 var _strMinusHidden = '-hidden';
                 var _strMarginMinus = 'margin-';
                 var _strPaddingMinus = 'padding-';
@@ -36547,7 +36580,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var _strTransitionEndEvent = 'transitionend webkitTransitionEnd oTransitionEnd';
                 var _strResizeObserverProperty = '__overlayScrollbarsRO__';
 
-                //class names:
+                //class names:	
                 var _cassNamesPrefix = 'os-';
                 var _classNameHTMLElement = _cassNamesPrefix + 'html';
                 var _classNameHostElement = _cassNamesPrefix + 'host';
@@ -36574,7 +36607,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var _classNameContentGlueElement = _cassNamesPrefix + 'content-glue';
                 var _classNameSizeAutoObserverElement = _cassNamesPrefix + 'size-auto-observer';
                 var _classNameResizeObserverElement = _cassNamesPrefix + 'resize-observer';
-                var _classNameResizeObserverItemElement = _cassNamesPrefix + 'resize-observer-item-type';
+                var _classNameResizeObserverItemElement = _cassNamesPrefix + 'resize-observer-item';
                 var _classNameResizeObserverItemFinalElement = _classNameResizeObserverItemElement + '-final';
                 var _classNameTextInherit = _cassNamesPrefix + 'text-inherit';
                 var _classNameScrollbar = _cassNamesPrefix + _strScrollbar;
@@ -36606,22 +36639,22 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                     _classNameScrollbarCornerResizeV,
                     _classNameDragging].join(_strSpace);
 
-                //callbacks:
+                //callbacks:	
                 var _callbacksInitQeueue = [];
 
-                //attrs viewport shall inherit from target
+                //attrs viewport shall inherit from target	
                 var _viewportAttrsFromTarget = [LEXICON.ti];
 
-                //options:
+                //options:	
                 var _defaultOptions;
                 var _currentOptions;
                 var _currentPreparedOptions;
 
-                //extensions:
+                //extensions:	
                 var _extensions = {};
                 var _extensionsPrivateMethods = 'added removed on contract';
 
-                //update
+                //update	
                 var _lastUpdateTime;
                 var _swallowedUpdateHints = {};
                 var _swallowedUpdateTimeout;
@@ -36629,21 +36662,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var _updateOnLoadEventName = 'load';
                 var _updateOnLoadElms = [];
 
-                //DOM elements:
+                //DOM elements:	
                 var _windowElement;
                 var _documentElement;
                 var _htmlElement;
                 var _bodyElement;
-                var _targetElement;                     //the target element of this OverlayScrollbars object
-                var _hostElement;                       //the host element of this OverlayScrollbars object -> may be the same as targetElement
-                var _sizeAutoObserverElement;           //observes size auto changes
-                var _sizeObserverElement;               //observes size and padding changes
-                var _paddingElement;                    //manages the padding
-                var _viewportElement;                   //is the viewport of our scrollbar model
-                var _contentElement;                    //the element which holds the content
-                var _contentArrangeElement;             //is needed for correct sizing of the content element (only if native scrollbars are overlays)
-                var _contentGlueElement;                //has always the size of the content element
-                var _textareaCoverElement;              //only applied if target is a textarea element. Used for correct size calculation and for prevention of uncontrolled scrolling
+                var _targetElement;                     //the target element of this OverlayScrollbars object	
+                var _hostElement;                       //the host element of this OverlayScrollbars object -> may be the same as targetElement	
+                var _sizeAutoObserverElement;           //observes size auto changes	
+                var _sizeObserverElement;               //observes size and padding changes	
+                var _paddingElement;                    //manages the padding	
+                var _viewportElement;                   //is the viewport of our scrollbar model	
+                var _contentElement;                    //the element which holds the content	
+                var _contentArrangeElement;             //is needed for correct sizing of the content element (only if native scrollbars are overlays)	
+                var _contentGlueElement;                //has always the size of the content element	
+                var _textareaCoverElement;              //only applied if target is a textarea element. Used for correct size calculation and for prevention of uncontrolled scrolling	
                 var _scrollbarCornerElement;
                 var _scrollbarHorizontalElement;
                 var _scrollbarHorizontalTrackElement;
@@ -36661,7 +36694,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var _viewportElementNative;
                 var _contentElementNative;
 
-                //Cache:
+                //Cache:	
                 var _hostSizeCache;
                 var _contentScrollSizeCache;
                 var _arrangeContentSizeCache;
@@ -36701,7 +36734,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var _bodyMinSizeCache;
                 var _updateAutoCache = {};
 
-                //MutationObserver:
+                //MutationObserver:	
                 var _mutationObserverHost;
                 var _mutationObserverContent;
                 var _mutationObserverHostCallback;
@@ -36710,13 +36743,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var _mutationObserverAttrsTextarea = ['wrap', 'cols', 'rows'];
                 var _mutationObserverAttrsHost = [LEXICON.i, LEXICON.c, LEXICON.s, 'open'].concat(_viewportAttrsFromTarget);
 
-                //events:
+                //events:	
                 var _destroyEvents = [];
 
-                //textarea:
+                //textarea:	
                 var _textareaHasFocus;
 
-                //scrollbars:
+                //scrollbars:	
                 var _scrollbarsAutoHideTimeoutId;
                 var _scrollbarsAutoHideMoveTimeoutId;
                 var _scrollbarsAutoHideDelay;
@@ -36727,21 +36760,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var _scrollbarsHandleHovered;
                 var _scrollbarsHandlesDefineScrollPos;
 
-                //resize
+                //resize	
                 var _resizeNone;
                 var _resizeBoth;
                 var _resizeHorizontal;
                 var _resizeVertical;
 
 
-                //==== Event Listener ====//
+                //==== Event Listener ====//	
 
-                /**
-                 * Adds or removes a event listener from the given element.
-                 * @param element The element to which the event listener shall be applied or removed.
-                 * @param eventNames The name(s) of the events.
-                 * @param listener The method which shall be called.
-                 * @param remove True if the handler shall be removed, false or undefined if the handler shall be added.
+                /**	
+                 * Adds or removes a event listener from the given element. 	
+                 * @param element The element to which the event listener shall be applied or removed.	
+                 * @param eventNames The name(s) of the events.	
+                 * @param listener The method which shall be called.	
+                 * @param remove True if the handler shall be removed, false or undefined if the handler shall be added.	
                  * @param passiveOrOptions The options for the event.
                  */
                 function setupResponsiveEventListener(element, eventNames, listener, remove, passiveOrOptions) {
@@ -36771,7 +36804,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                             }
                             else {
                                 element[onOff](events[i], listener);
-                            }
+                            }     
                         }
                     }
                 }
@@ -36983,7 +37016,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                  * Freezes or unfreezes the given resize observer.
                  * @param targetElement The element to which the target resize observer is applied.
                  * @param freeze True if the resize observer shall be frozen, false otherwise.
-
+                 
                 function freezeResizeObserver(targetElement, freeze) {
                     if (targetElement !== undefined) {
                         if(freeze) {
@@ -37225,8 +37258,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                     return false;
                 }
 
-                /**
-                 * A callback which will be called after a element has loaded.
+                /**	
+                 * A callback which will be called after a element has loaded.	
                  */
                 function updateOnLoadCallback(event) {
                     var elm = FRAMEWORK(event.target);
@@ -37323,11 +37356,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                     if (mutationTarget === _contentElementNative)
                         return attributeName === null;
                     if (mutationType === 'attributes' && (attributeName === LEXICON.c || attributeName === LEXICON.s) && !_isTextarea) {
-                        //ignore className changes by the plugin
+                        //ignore className changes by the plugin	
                         if (attributeName === LEXICON.c && FRAMEWORK(mutationTarget).hasClass(_classNameHostElement))
                             return hostClassNamesChanged(mutation.oldValue, mutationTarget.className);
 
-                        //only do it of browser support it natively
+                        //only do it of browser support it natively	
                         if (typeof mutationTarget[strClosest] != TYPES.f)
                             return true;
                         if (mutationTarget[strClosest](_strDot + _classNameResizeObserverElement) !== null ||
@@ -37380,7 +37413,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 }
 
                 /**
-                 * Returns true when a attribute which the MutationObserver would observe has changed.
+                 * Returns true when a attribute which the MutationObserver would observe has changed.  
                  * @returns {boolean} True if one of the attributes which a MutationObserver would observe has changed, false or undefined otherwise.
                  */
                 function meaningfulAttrsChanged() {
@@ -38289,7 +38322,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                             setViewportCSS(true);
                             setViewportCSS(false);
 
-                            // if the scroll container is too small and if there is any overflow with no overlay scrollbar (and scrollbar styling isn't possible),
+                            // if the scroll container is too small and if there is any overflow with no overlay scrollbar (and scrollbar styling isn't possible), 
                             // make viewport element greater in size (Firefox hide Scrollbars fix)
                             // because firefox starts hiding scrollbars on too small elements
                             // with this behavior the overflow calculation may be incorrect or the scrollbars would appear suddenly
@@ -38620,7 +38653,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                     if (_domExists)
                         addClass(_hostElement, _classNameHostElementForeign);
 
-                    //on destroy, remove all generated class names from the host element before collecting the adopted attributes
+                    //on destroy, remove all generated class names from the host element before collecting the adopted attributes 
                     //to prevent adopting generated class names
                     if (destroy)
                         removeClass(_hostElement, hostElementClassNames);
@@ -39011,8 +39044,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                         COMPATIBILITY.rAF()(function() {
                             setupResponsiveEventListener(_documentElement, strClickEvent, stopClickEventPropagation, true, { _capture: true });
                         });
-
-
+                        
+                            
                         if (_scrollbarsHandlesDefineScrollPos)
                             refreshScrollbarHandleOffset(isHorizontal, true);
 
@@ -39070,7 +39103,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                         COMPATIBILITY.rAF()(function() {
                             setupResponsiveEventListener(_documentElement, strClickEvent, stopClickEventPropagation, false, { _capture: true });
                         });
-
+                        
 
                         if (_msieVersion || !_documentMixed)
                             COMPATIBILITY.prvD(event);
@@ -39847,9 +39880,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                     FRAMEWORK.extend(obj, extendObjRoot, true);
                 }
 
-                /**
-                 * Runs a action for each selector inside the updateOnLoad option.
-                 * @param {Function} action The action for each updateOnLoad selector, the arguments the function takes is the index and the value (the selector).
+                /**	
+                 * Runs a action for each selector inside the updateOnLoad option.	
+                 * @param {Function} action The action for each updateOnLoad selector, the arguments the function takes is the index and the value (the selector).	
                  */
                 function eachUpdateOnLoad(action) {
                     var updateOnLoad = _currentPreparedOptions.updateOnLoad;
@@ -39959,7 +39992,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                  * if "auto" then before a real update the content size and host element attributes gets checked, and if they changed only then the update method will be called.
                  * if "sync" then the async update process (MutationObserver or UpdateLoop) gets synchronized and a corresponding update takes place if one was needed due to pending changes.
                  * if "zoom" then a update takes place where it's assumed that content and host size changed
-                 * @returns {boolean|undefined}
+                 * @returns {boolean|undefined} 
                  * If force is "sync" then a boolean is returned which indicates whether a update was needed due to pending changes.
                  * If force is "auto" then a boolean is returned whether a update was needed due to attribute or size changes.
                  * undefined otherwise.
@@ -40286,7 +40319,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                             return isX ? coordinates[0] : coordinates[1];
                         else if (type(coordinates) == TYPES.o) {
                             //decides RTL normalization "hack" with .n
-                            //normalizeRTL = type(coordinates.n) == TYPES.b ? coordinates.n : normalizeRTL;
+                            //normalizeRTL = type(coordinates.n) == TYPES.b ? coordinates.n : normalizeRTL; 
                             for (i = 0; i < coordinateProps[strLength]; i++)
                                 if (coordinateProps[i] in coordinates)
                                     return coordinates[coordinateProps[i]];
@@ -40768,7 +40801,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                     /* On a div Element The if checks only whether:
                      * - the targetElement has the class "os-host"
                      * - the targetElement has a a child with the class "os-padding"
-                     *
+                     * 
                      * If that's the case, its assumed the DOM has already the following structure:
                      * (The ".os-host" element is the targetElement)
                      *
@@ -40793,11 +40826,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
                      *  </div>
                      *
                      * =====================================================================================
-                     *
+                     * 
                      * On a Textarea Element The if checks only whether:
-                     * - the targetElement has the class "os-textarea"
-                     * - the targetElement is inside a element with the class "os-content"
-                     *
+                     * - the targetElement has the class "os-textarea" 
+                     * - the targetElement is inside a element with the class "os-content" 
+                     * 
                      * If that's the case, its assumed the DOM has already the following structure:
                      * (The ".os-textarea" (textarea) element is the targetElement)
                      *
@@ -44224,6 +44257,53 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/OrderItem.vue?vue&type=template&id=3f0dbdb4&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/OrderItem.vue?vue&type=template&id=3f0dbdb4& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header" }, [
+              _vm._v("Example Component")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _vm._v(
+                "\n                    I'm an example component.\n                "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -44481,7 +44561,7 @@ var isBuiltInTag = makeMap('slot,component', true);
 var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
 
 /**
- * Remove an item-type from an array.
+ * Remove an item from an array.
  */
 function remove (arr, item) {
   if (arr.length) {
@@ -56412,6 +56492,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('order-item', __webpack_require__(/*! ./components/OrderItem.vue */ "./resources/js/components/OrderItem.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -56500,7 +56581,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-
+  
 )
 
 /* hot reload */
@@ -56520,7 +56601,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -56537,6 +56618,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/OrderItem.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/OrderItem.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _OrderItem_vue_vue_type_template_id_3f0dbdb4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./OrderItem.vue?vue&type=template&id=3f0dbdb4& */ "./resources/js/components/OrderItem.vue?vue&type=template&id=3f0dbdb4&");
+/* harmony import */ var _OrderItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./OrderItem.vue?vue&type=script&lang=js& */ "./resources/js/components/OrderItem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _OrderItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _OrderItem_vue_vue_type_template_id_3f0dbdb4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _OrderItem_vue_vue_type_template_id_3f0dbdb4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/OrderItem.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/OrderItem.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/OrderItem.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./OrderItem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/OrderItem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/OrderItem.vue?vue&type=template&id=3f0dbdb4&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/OrderItem.vue?vue&type=template&id=3f0dbdb4& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderItem_vue_vue_type_template_id_3f0dbdb4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./OrderItem.vue?vue&type=template&id=3f0dbdb4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/OrderItem.vue?vue&type=template&id=3f0dbdb4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderItem_vue_vue_type_template_id_3f0dbdb4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_OrderItem_vue_vue_type_template_id_3f0dbdb4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -57333,14 +57483,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       LOAD_DATA_API: "load" + EVENT_KEY
     };
     var Selector = {
-      LI: '.nav-item-type',
+      LI: '.nav-item',
       LINK: '.nav-link',
       TREEVIEW_MENU: '.nav-treeview',
       OPEN: '.menu-open',
       DATA_WIDGET: '[data-widget="treeview"]'
     };
     var ClassName = {
-      LI: 'nav-item-type',
+      LI: 'nav-item',
       LINK: 'nav-link',
       TREEVIEW_MENU: 'nav-treeview',
       OPEN: 'menu-open',
@@ -58154,7 +58304,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           this._element.parents('.dropdown-menu').first().find('.show').removeClass("show").hide();
         }
 
-        this._element.parents('li.nav-item-type.dropdown.show').on('hidden.bs.dropdown', function (e) {
+        this._element.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
           $('.dropdown-submenu .show').removeClass("show").hide();
         });
       };

@@ -27,6 +27,15 @@
     @endif
 </div>
 <div class="form-group">
+    {!! Form::label('minimum_stock', 'Stok Minimal') !!}
+    {!! Form::number('minimum_stock', null, ['class' => $errors->has('minimum_stock') ? 'form-control is-invalid' : 'form-control']) !!}
+    @if($errors->has('minimum_stock'))
+        <div class="invalid-feedback">
+            <strong>{{ $errors->first('minimum_stock') }}</strong>
+        </div>
+    @endif
+</div>
+<div class="form-group">
     {!! Form::label('purchase_price', 'Harga Beli') !!}
     {!! Form::number('purchase_price', null, ['class' => $errors->has('purchase_price') ? 'form-control is-invalid' : 'form-control']) !!}
     @if($errors->has('purchase_price'))

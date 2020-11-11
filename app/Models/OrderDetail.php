@@ -18,10 +18,10 @@ class OrderDetail extends BaseModel
     ];
 
     public function order() {
-        return $this->hasOne(Order::class);
+        return $this->belongsTo(Order::class);
     }
 
     public function item() {
-        return $this->hasOne(Item::class);
+        return $this->belongsTo(Item::class);
     }
 }

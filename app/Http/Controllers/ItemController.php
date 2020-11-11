@@ -68,6 +68,7 @@ class ItemController extends Controller
             ->addColumn(['data' => 'DT_RowIndex', 'name' => 'DT_RowIndex', 'title' => '#', 'orderable' => false, 'searchable' => false, 'width' => 30])
             ->addColumn(['data' => 'name', 'name' => 'name', 'title' => 'Nama'])
             ->addColumn(['data' => 'description', 'name' => 'description', 'title' => 'Deskripsi'])
+            ->addColumn(['data' => 'minimum_stock', 'name' => 'minimum_stock', 'title' => 'Minumum Stock'])
             ->addColumn(['data' => 'sell_price', 'name' => 'sell_price', 'title' => 'Harga Jual'])
             ->addColumn(['data' => 'purchase_price', 'name' => 'purchase_price', 'title' => 'Harga Beli'])
             ->addColumn(['data' => 'created_at', 'name' => 'created_at', 'title' => 'Created At'])
@@ -96,6 +97,7 @@ class ItemController extends Controller
     {
         $request->validate([
             'name' => ['required'],
+            'minimum_stock' => ['required'],
             'sell_price' => ['required'],
             'purchase_price' => ['required'],
             'description' => ['nullable'],
@@ -141,6 +143,7 @@ class ItemController extends Controller
     {
         $request->validate([
             'name' => ['required'],
+            'minimum_stock' => ['required'],
             'sell_price' => ['required'],
             'purchase_price' => ['required'],
             'description' => ['nullable'],

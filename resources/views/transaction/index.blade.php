@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Order Pembelian Barang') }} <a href="{{ route('order.create') }}" class="btn btn-primary">Tambah Data</a></div>
+                    <div class="card-header">{{ __('Transaksi Barang') }} <a href="{{ route('transaction.create') }}" class="btn btn-primary">Tambah Data</a></div>
 
                     <div class="card-body">
                         {!! $dataTable->table(['class'=>'table table-bordered table-hover'], true) !!}

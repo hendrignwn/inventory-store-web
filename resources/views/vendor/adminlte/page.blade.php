@@ -18,7 +18,7 @@
 @section('body_data', $layoutHelper->makeBodyData())
 
 @section('body')
-    <div class="wrapper" id="app">
+    <div class="wrapper">
 
         {{-- Top Navbar --}}
         @if($layoutHelper->isLayoutTopnavEnabled())
@@ -45,6 +45,16 @@
             {{-- Main Content --}}
             <div class="content">
                 <div class="{{ config('adminlte.classes_content') ?: $def_container_class }}">
+                    @if (session('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     @yield('content')
                 </div>
             </div>

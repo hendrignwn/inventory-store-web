@@ -232,30 +232,40 @@ return [
 
     'menu' => [
         [
+            'text' => 'Dashboard',
+            'url'  => 'home',
+        ],
+        [
             'text'    => 'Master Data',
             'icon'    => 'fa fa-menu',
+            'can'     => ['admin', 'employee'],
             'submenu' => [
                 [
                     'text' => 'Jenis Barang',
                     'url'  => 'item-type',
+                    'can'     => ['admin'],
                 ],
                 [
                     'text' => 'Barang',
                     'url'  => 'item',
+                    'can'     => ['admin'],
                 ],
                 [
                     'text' => 'Supplier',
                     'url'  => 'supplier',
+                    'can'     => ['admin'],
                 ],
                 [
                     'text' => 'Customer',
                     'url'  => 'customer',
+                    'can'     => ['admin', 'employee'],
                 ],
             ],
         ],
         [
             'text'    => 'Order Barang',
             'icon'    => 'fa fa-menu',
+            'can'     => ['admin'],
             'submenu' => [
                 [
                     'text' => 'Input Order Barang',
@@ -270,6 +280,7 @@ return [
         [
             'text'    => 'Transaksi',
             'icon'    => 'fa fa-menu',
+            'can'     => ['admin', 'employee'],
             'submenu' => [
                 [
                     'text' => 'Input Transaksi',
@@ -284,14 +295,51 @@ return [
         [
             'text'    => 'Laporan',
             'icon'    => 'fa fa-menu',
+            'can'     => ['admin'],
             'submenu' => [
                 [
-                    'text' => 'Transaksi Barang',
-                    'url'  => 'report/transaction',
+                    'text' => 'Stok Barang',
+                    'url'  => 'report/item-stock',
                 ],
                 [
-                    'text' => 'Order Barang',
-                    'url'  => 'report/order',
+                    'text' => 'Rekapitulasi Pembelian Barang',
+                    'url'  => 'report/order-recap',
+                ],
+                [
+                    'text' => 'Rekapitulasi Transaksi Barang',
+                    'url'  => 'report/order-recap',
+                ],
+                [
+                    'text' => 'Stok Hampir Habis',
+                    'url'  => 'report/item-stock-minimum',
+                ],
+                [
+                    'text' => 'Stok per-Supplier',
+                    'url'  => 'report/item-stock-supplier',
+                ],
+                [
+                    'text' => 'Transaksi per-Customer',
+                    'url'  => 'report/transaction-customer',
+                ],
+                [
+                    'text' => 'Transaksi per-Karyawan',
+                    'url'  => 'report/transaction-user',
+                ],
+                [
+                    'text' => 'Pembelian per-Supplier',
+                    'url'  => 'report/order-supplier',
+                ],
+                [
+                    'text' => 'Top 5 Barang Terlaris',
+                    'url'  => 'report/top-item',
+                ],
+                [
+                    'text' => 'Top 5 Customer Level',
+                    'url'  => 'report/top-customer',
+                ],
+                [
+                    'text' => 'Top Barang terbaru',
+                    'url'  => 'report/top-new-item',
                 ],
             ],
         ],
