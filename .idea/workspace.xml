@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f3330b8-0eb4-4714-8802-4e72bf763911" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +189,7 @@
       <updated>1604982336401</updated>
       <workItem from="1604982337430" duration="12186000" />
       <workItem from="1605065337910" duration="6283000" />
-      <workItem from="1605100995720" duration="8220000" />
+      <workItem from="1605100995720" duration="8730000" />
     </task>
     <servers />
   </component>
