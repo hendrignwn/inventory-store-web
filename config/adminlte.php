@@ -338,8 +338,8 @@ return [
                     'url'  => 'report/top-customer',
                 ],
                 [
-                    'text' => 'Top Barang terbaru',
-                    'url'  => 'report/top-new-item',
+                    'text' => 'Laba',
+                    'url'  => 'report/revenue',
                 ],
             ],
         ],
