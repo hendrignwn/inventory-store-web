@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Laporan Stok Barang') }}</div>
+                    <div class="card-header">{{ __('Laporan Rekapitulasi Transaksi barang') }}</div>
 
                     <div class="card-body">
                         {!! $dataTable->table(['class'=>'table table-bordered table-hover'], true) !!}

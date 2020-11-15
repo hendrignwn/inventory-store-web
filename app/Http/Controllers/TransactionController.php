@@ -66,9 +66,10 @@ class TransactionController extends Controller
             ->parameters([
                 'paging' => true,
                 'searching' => true,
-                'info' => false,
+//                'info' => false,
                 'searchDelay' => 350,
                 'buttons' => ['pdf'],
+                'order' => [[2, 'desc']],
             ])
             ->addColumn(['data' => 'DT_RowIndex', 'name' => 'DT_RowIndex', 'title' => '#', 'orderable' => false, 'searchable' => false, 'width' => 30])
             ->addColumn(['data' => 'trx_number', 'name' => 'trx_number', 'title' => 'Nomor Transaksi'])

@@ -307,15 +307,15 @@ return [
                 ],
                 [
                     'text' => 'Rekapitulasi Transaksi Barang',
-                    'url'  => 'report/order-recap',
+                    'url'  => 'report/transaction-recap',
                 ],
                 [
                     'text' => 'Stok Hampir Habis',
-                    'url'  => 'report/item-stock-minimum',
+                    'url'  => 'report/stock-minimum',
                 ],
                 [
                     'text' => 'Stok per-Supplier',
-                    'url'  => 'report/item-stock-supplier',
+                    'url'  => 'report/stock-supplier',
                 ],
                 [
                     'text' => 'Transaksi per-Customer',
@@ -330,11 +330,11 @@ return [
                     'url'  => 'report/order-supplier',
                 ],
                 [
-                    'text' => 'Top 5 Barang Terlaris',
+                    'text' => 'Top Barang Terlaris',
                     'url'  => 'report/top-item',
                 ],
                 [
-                    'text' => 'Top 5 Customer Level',
+                    'text' => 'Top Customer Level',
                     'url'  => 'report/top-customer',
                 ],
                 [

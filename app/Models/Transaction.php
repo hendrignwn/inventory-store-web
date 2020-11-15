@@ -38,13 +38,13 @@ class Transaction extends BaseModel
     public static function generateTrxNumber() {
         $currentDate = Carbon::now()->format('Y-m-d');
 
-        $left = 'TRX-';
+        $left = 'TRX-' . $currentDate . '-';
         $leftLen = strlen($left);
         $increment = 1;
         $padLength = 4;
 
-        $last = self::where('trx_number', 'like', "%$currentDate%")
-            ->orderBy('trx_number', 'desc')
+        $last = self::where('trx_number', 'like', "%$left%")
+            ->orderBy('created_at', 'desc')
             ->limit(1)
             ->first();
 

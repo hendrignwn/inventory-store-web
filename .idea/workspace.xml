@@ -2,8 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f3330b8-0eb4-4714-8802-4e72bf763911" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/report/order-recap.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/report/order-supplier.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/report/revenue.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/report/stock-minimum.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/report/top-5-item.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/report/top-customer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/report/transaction-customer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/report/transaction-recap.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/report/transaction-user.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/item-stock.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/item-stock.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +172,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/report" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -162,15 +182,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/item-type" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/report" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/resources/views/order" />
       <recent name="$PROJECT_DIR$/resources/views/transaction" />
-      <recent name="$PROJECT_DIR$/app/Models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/item-type" />
     </key>
   </component>
   <component name="RunManager">
@@ -189,7 +209,9 @@
       <updated>1604982336401</updated>
       <workItem from="1604982337430" duration="12186000" />
       <workItem from="1605065337910" duration="6283000" />
-      <workItem from="1605100995720" duration="8730000" />
+      <workItem from="1605100995720" duration="10363000" />
+      <workItem from="1605150427712" duration="130000" />
+      <workItem from="1605408593118" duration="7931000" />
     </task>
     <servers />
   </component>
@@ -213,9 +235,17 @@
       <screen x="0" y="23" width="1440" height="845" />
     </state>
     <state x="100" y="123" width="1240" height="645" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.845@0.23.1440.845" timestamp="1604993230527" />
+    <state x="531" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605413389239">
+      <screen x="0" y="23" width="1440" height="845" />
+    </state>
+    <state x="531" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.845@0.23.1440.845" timestamp="1605413389239" />
     <state x="421" y="207" width="598" height="476" key="find.popup" timestamp="1605068514925">
       <screen x="0" y="23" width="1440" height="845" />
     </state>
     <state x="421" y="207" width="598" height="476" key="find.popup/0.23.1440.845@0.23.1440.845" timestamp="1605068514925" />
+    <state x="385" y="192" width="670" height="676" key="search.everywhere.popup" timestamp="1605416243158">
+      <screen x="0" y="23" width="1440" height="845" />
+    </state>
+    <state x="385" y="192" width="670" height="676" key="search.everywhere.popup/0.23.1440.845@0.23.1440.845" timestamp="1605416243158" />
   </component>
 </project>

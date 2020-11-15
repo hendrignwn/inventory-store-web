@@ -38,7 +38,7 @@ class Order extends BaseModel
         $increment = 1;
         $padLength = 4;
 
-        $last = self::where('created_at', 'like', "%$currentDate%")
+        $last = self::where('order_number', 'like', "%$left%")
             ->orderBy('created_at', 'desc')
             ->limit(1)
             ->first();

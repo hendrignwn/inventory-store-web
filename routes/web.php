@@ -43,5 +43,15 @@ Route::middleware('auth')->group(function() {
     });
     Route::prefix('report')->group(function() {
         Route::get('/item-stock', [\App\Http\Controllers\ReportController::class, 'itemStock'])->name('report.item-stock');
+        Route::get('/order-recap', [\App\Http\Controllers\ReportController::class, 'orderRecap'])->name('report.order-recap');
+        Route::get('/order-supplier', [\App\Http\Controllers\ReportController::class, 'orderSupplier'])->name('report.order-supplier');
+        Route::get('/transaction-recap', [\App\Http\Controllers\ReportController::class, 'transactionRecap'])->name('report.transaction-recap');
+        Route::get('/stock-minimum', [\App\Http\Controllers\ReportController::class, 'stockMinimum'])->name('report.stock-minimum');
+        Route::get('/stock-supplier', [\App\Http\Controllers\ReportController::class, 'stockSupplier'])->name('report.stock-supplier');
+        Route::get('/transaction-customer', [\App\Http\Controllers\ReportController::class, 'transactionCustomer'])->name('report.transaction-customer');
+        Route::get('/transaction-user', [\App\Http\Controllers\ReportController::class, 'transactionUser'])->name('report.transaction-user');
+        Route::get('/top-item', [\App\Http\Controllers\ReportController::class, 'top5Item'])->name('report.top-item');
+        Route::get('/top-customer', [\App\Http\Controllers\ReportController::class, 'topCustomer'])->name('report.top-customer');
+        Route::get('/revenue', [\App\Http\Controllers\ReportController::class, 'revenue'])->name('report.revenue    ');
     });
 });

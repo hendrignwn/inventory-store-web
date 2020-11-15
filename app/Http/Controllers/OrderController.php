@@ -65,6 +65,7 @@ class OrderController extends Controller
                 'info' => false,
                 'searchDelay' => 350,
                 'buttons' => ['pdf'],
+                'order' => [[4, 'desc']],
             ])
             ->addColumn(['data' => 'DT_RowIndex', 'name' => 'DT_RowIndex', 'title' => '#', 'orderable' => false, 'searchable' => false, 'width' => 30])
             ->addColumn(['data' => 'order_number', 'name' => 'order_number', 'title' => 'Nomor Order'])
