@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/jquery.dataTables.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/buttons.dataTables.min.css') }}" />
 @stop
+@section('plugins.Sweetalert2', true)
 @section('js')
     <script src="{{ asset('js/jquery.js') }}"></script>
     <!-- DataTables -->

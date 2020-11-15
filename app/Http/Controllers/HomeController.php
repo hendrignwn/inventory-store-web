@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\ItemStock;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -37,6 +39,13 @@ class HomeController extends Controller
         $itemsNew = Item::select(['*'])
             ->whereNotIn('id', ItemStock::pluck('item_id'))
             ->get();
+
+        if (Auth::user()->role == User::ROLE_ADMIN) {
+            if (count($itemStocks) > 0) {
+                $url = route('report.stock-minimum');
+//                alert()->message("<a href='{$url}'>Lihat Barang</a>", count($itemStocks) . ' stok barang hampir habis')->html()->persistent('Tutup')->autoclose();
+            }
+        }
         return view('home', compact('itemStocks', 'itemsNew'));
     }
 }
