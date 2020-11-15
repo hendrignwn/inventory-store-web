@@ -43,7 +43,7 @@ class HomeController extends Controller
         if (Auth::user()->role == User::ROLE_ADMIN) {
             if (count($itemStocks) > 0) {
                 $url = route('report.stock-minimum');
-//                alert()->message("<a href='{$url}'>Lihat Barang</a>", count($itemStocks) . ' stok barang hampir habis')->html()->persistent('Tutup')->autoclose();
+                alert()->message("<a href='{$url}'>Lihat Barang</a>", count($itemStocks) . ' stok barang hampir habis')->html()->persistent('Tutup')->autoclose();
             }
         }
         return view('home', compact('itemStocks', 'itemsNew'));
