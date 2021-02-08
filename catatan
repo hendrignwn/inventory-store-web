@@ -1,0 +1,22 @@
+JIka ingin running aplikasi.
+1. Jalankan Aplikasi XAMPP
+     Start Apache dan MySQL
+2. buka folder project, dalam hal ini project berada di C:\xampp\htdocs\inventory-store-web, masuk ke dalam folder tersebut.
+3. kemudian klik kanan, lalu klik git bash here
+4. jika sudah muncul console, pastikan console seperti ini.
+    HP PAVILION@DESKTOP-GH8MFCQ MINGW64 /c/xampp/htdocs/inventory-store-web (master)
+    $
+
+5. jika sudah seperti itu, ketik
+    php artisan serve
+
+6. lalu buka browser dengan mengetik localhost:8000
+
+. Thats it ..
+
+
+nama table _id
+
+item_types
+
+item_type_id
